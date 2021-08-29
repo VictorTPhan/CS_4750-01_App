@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'My Demo App 2',
+              'Guess who just pushed to GitHub?',
             ),
             Text(
               'You have pushed the button this many times!!!',
