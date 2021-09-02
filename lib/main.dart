@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'new_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,6 +59,11 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
       print("The counter has been increased to " + _counter.toString());
     });
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MySecondPage(title: "Second Page")),
+    );
   }
 
   @override
@@ -95,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Guess who just pushed to GitHub?',
+              'Guess who just pushed to GitHub? - Screen 1',
             ),
             Text(
               'You have pushed the button this many times!!!',
