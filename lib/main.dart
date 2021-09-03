@@ -100,18 +100,52 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image(
+              image: NetworkImage('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.fitness-clubs.be%2Fimg%2Fdyn.php%3Fsrc%3D%2Fupload-news-pictures%2F53da57f17a435%2Fnews.png%26w%3D400&f=1&nofb=1')
+            ),
             Text(
               'Guess who just pushed to GitHub? - Screen 1',
+              style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 30.0,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+              )
             ),
             Text(
               'You have pushed the button this many times!!!',
             ),
             Text(
-              '$_counter',
+              'Current Click: ${_counter *2}',
               style: Theme.of(context).textTheme.headline4,
             ),
+            TextField(
+              obscureText: false,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Password',
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(()
+                {
+                  _counter++;
+                });
+              },
+              child: Text(
+                'Confirm',
+                style: TextStyle(
+                  color: Colors.blue
+                )
+              )
+            )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape:const CircularNotchedRectangle(),
+        child: Container(height:50.0),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
