@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_flutter_app/login_page.dart';
+import 'column_demo.dart';
 import 'new_page.dart';
 
 void main() {
@@ -141,7 +143,10 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 setState(()
                 {
-                  _counter++;
+                  Navigator.push(
+                    context,
+                      MaterialPageRoute(builder: (context) => LoginPage())
+                  );
                 });
               },
               child: Text(
